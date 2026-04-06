@@ -11,20 +11,20 @@ See `MIGRATION.md` for the old-file → new-file deletion checklist.
 
 ## Phase 1 — Scaffolding & Tooling
 
-- [ ] Create `v3` branch from `main`
-- [ ] Tag current `main` as `v2-legacy`
-- [ ] Scaffold `backend/` directory structure
-- [ ] Scaffold `frontend/` directory structure
-- [ ] Set up `backend/pyproject.toml` — Ruff + mypy config
-- [ ] Set up `frontend/package.json` — Vite + TypeScript + ESLint + Prettier + Vitest
-- [ ] Set up `frontend/vite.config.ts` — proxy `/api` to `localhost:8000` in dev
-- [ ] Set up `frontend/tsconfig.json`
+- [x] Create `v3` branch from `main`
+- [x] Tag current `main` as `v2-legacy`
+- [x] Scaffold `backend/` directory structure
+- [x] Scaffold `frontend/` directory structure
+- [x] Set up `backend/pyproject.toml` — Ruff + mypy config
+- [x] Set up `frontend/package.json` — Vite + TypeScript + ESLint + Prettier + Vitest
+- [x] Set up `frontend/vite.config.ts` — proxy `/api` to `localhost:8000` in dev
+- [x] Set up `frontend/tsconfig.json`
 - [ ] Set up `docker-compose.yml` — hot-reload frontend + backend
 - [ ] Set up `Dockerfile` — production single image (nginx + uvicorn)
 - [ ] Set up `nginx/nginx.conf` — serve static build, proxy `/api`
 - [ ] Set up `.github/workflows/ci.yml` — lint → typecheck → unit tests → E2E
 - [ ] Set up `.pre-commit-config.yaml` — Ruff + ESLint/Prettier hooks
-- [ ] Create `MIGRATION.md` with full old-file → new-file checklist
+- [x] Create `MIGRATION.md` with full old-file → new-file checklist
 
 ---
 

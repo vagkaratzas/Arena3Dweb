@@ -14,6 +14,50 @@ If you are on the `v3` branch, the presence of old R/Shiny files (`server.R`, `f
 
 ## Running the App
 
+### v3 (FastAPI + Vite — active development, `v3` branch)
+
+**Backend:**
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload   # http://localhost:8000
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev                     # http://localhost:5173 — /api proxied to localhost:8000
+```
+
+**Both together (Docker):**
+```bash
+docker-compose up
+```
+
+**Backend tests:**
+```bash
+cd backend && pytest
+```
+
+**Frontend tests:**
+```bash
+cd frontend && npm test          # Vitest unit tests
+cd frontend && npm run test:e2e  # Playwright E2E
+```
+
+**Lint / format:**
+```bash
+cd backend && ruff check . && ruff format .
+cd frontend && npm run lint && npm run format
+```
+
+---
+
+### v2 (R/Shiny — legacy, `main` branch)
+
 **From RStudio:**
 1. Open `Arena3Dweb.Rproj`
 2. Open `server.R`, select "Run External", click "Run App"
@@ -27,11 +71,6 @@ docker run -p 3838:3838 pavlopouloslab/arena3dweb
 **From R CLI:**
 ```r
 shiny::runApp('.')
-```
-
-**Required R packages:**
-```r
-install.packages(c("shiny", "shinyjs", "shinythemes", "igraph", "RColorBrewer", "jsonlite", "tidyr", "dplyr", "DT", "fst"))
 ```
 
 ## Architecture Overview
